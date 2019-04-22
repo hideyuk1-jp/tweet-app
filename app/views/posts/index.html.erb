@@ -1,7 +1,10 @@
 <% @posts.each do |post| %>
-  <div class="card bg-light mb-3">
+  <%= link_to("/posts/#{post.id}", class: "card bg-light mb-3") do %>
     <div class="card-body">
       <p class="card-text"><%= post.content %></p>
     </div>
-  </div>
+    <div class="card-footer">
+      <small class="text-muted"><%= post.created_at.in_time_zone('Asia/Tokyo').strftime('%Y/%m/%d %H:%M') %></small>
+    </div>
+  <% end %>
 <% end %>
