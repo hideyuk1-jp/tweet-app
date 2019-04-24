@@ -1,5 +1,6 @@
+<div class="container">
 <% @posts.each do |post| %>
-  <%= link_to("/posts/#{post.id}", class: "card bg-light mb-3") do %>
+  <%= link_to("/posts/#{post.id}", class: "card bg-light mt-4") do %>
     <div class="card-body">
       <p class="card-text"><%= post.content %></p>
     </div>
@@ -8,3 +9,4 @@
     </div>
   <% end %>
 <% end %>
+</div>

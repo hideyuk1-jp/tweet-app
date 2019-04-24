@@ -1,6 +1,11 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    if params[:keyword]
+      @posts = Post.where("content LIKE ?", "%#{params[:keyword]}%")
+      @keyword = params[:keyword]
+    else
+      @posts = Post.all
+    end
   end
 
   def show

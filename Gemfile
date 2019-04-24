@@ -64,3 +64,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Use Bootstrap4
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+
+# Use Bootswatch
+gem "bootswatch", github: "thomaspark/bootswatch"
+
+# Use FontAwesome
+gem "font-awesome-rails"
