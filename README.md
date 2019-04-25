@@ -1,24 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+TweetAppはhideyuk1が作成したTwitterのようなWebアプリケーションです。
+ProgateでRuby on Railsを学んだ直後に動くものを実際に作ってみようと思って作りました。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+作者のブログ: https://hideyuk1.com 
