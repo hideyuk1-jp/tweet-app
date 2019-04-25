@@ -1,12 +1,18 @@
 <div class="container">
-<% @posts.each do |post| %>
-  <%= link_to("/posts/#{post.id}", class: "card bg-light mt-4") do %>
-    <div class="card-body">
-      <p class="card-text"><%= post.content %></p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted"><%= post.created_at.in_time_zone('Asia/Tokyo').strftime('%Y/%m/%d %H:%M') %></small>
+  <% if flash[:notice] %>
+    <div class="alert alert-dismissible alert-info mt-4">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <span><%= flash[:notice] %></span>
     </div>
   <% end %>
-<% end %>
+  <% @posts.each do |post| %>
+    <%= link_to("/posts/#{post.id}", class: "card mt-4") do %>
+      <div class="card-body">
+        <%= simple_format(post.content, class: "card-text lead") %>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted"><%= post.created_at.in_time_zone('Asia/Tokyo').strftime('%Y/%m/%d %H:%M') %></small>
+      </div>
+    <% end %>
+  <% end %>
 </div>

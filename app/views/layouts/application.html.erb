@@ -22,14 +22,8 @@
               <li class="nav-item">
                 <%= link_to("投稿一覧", "/posts/index", class: "nav-link") %>
               </li>
-              <li class="nav-item dropdown">
-                <%= link_to("Dropdown", "/", class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", "data-toggle": "dropdown", "aria-haspopup": "true", "aria-expanded": "false") %>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+              <li class="nav-item">
+                <%= link_to("新規投稿", "/posts/new", class: "nav-link") %>
               </li>
             </ul>
             <%= form_tag('/posts/search', class: "form-inline my-2 my-lg-0", method: :post) do %>
@@ -45,7 +39,7 @@
     </main>
     <footer class="footer mt-4">
       <div class="container">
-        <p class="text-muted">Place sticky footer content here.</p>
+        <p class="text-muted">footer content here.</p>
       </div>
     </footer>
   </body>

@@ -1,0 +1,9 @@
+<div class="container">
+  <h2 class="mt-4">編集</h2>
+  <%= form_tag("/posts/#{@post.id}/update", class: "mt-4", method: :post) do %>
+    <div class="form-group">
+      <textarea class="form-control" name="content" rows="3" spellcheck="false"><%= @post.content %></textarea>
+      <button type="submit" class="btn btn-primary mt-3">送信</button>
+    </div>
+  <% end %>
+</div>
