@@ -12,11 +12,12 @@
  *
  *= require_tree .
  *= require_self
- *= require font-awesome
  */
 @import "lumen/variables";
 @import "bootstrap";
 @import "lumen/bootswatch";
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 body {
   font-family: 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
@@ -24,4 +25,26 @@ body {
 a.card, a.card:hover {
   color: inherit;
   text-decoration: none;
+}
+.btn {
+  text-transform: none;
+}
+.size-50 {
+  width: 50px;
+  height: 50px;
+}
+.size-40 {
+  width: 40px;
+  height: 40px;
+}
+.size-35 {
+  width: 35px;
+  height: 35px;
+}
+[contentEditable=true]:empty:not(:focus):before{
+  content:attr(data-placeholder);
+  color: #999 !important;
+}
+.liked {
+    color: #ff3775;
 }

@@ -12,9 +12,6 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
   end
 
-  def new
-  end
-
   def create
     @post = Post.new(content: params[:content])
     @post.save

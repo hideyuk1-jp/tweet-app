@@ -69,4 +69,4 @@ gem 'jquery-rails'
 gem "bootswatch", github: "thomaspark/bootswatch"
 
 # Use FontAwesome
-gem "font-awesome-rails"
+gem "font-awesome-sass", '~> 5.8.1'
