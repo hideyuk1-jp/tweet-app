@@ -35,3 +35,12 @@ ja:
       over_x_years:
         one:   "1年以上"
         other: "%{count}年以上"
+  activerecord:
+    models:
+      user: "ユーザー"
+    attributes:
+      user:
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        image_name: "画像"
