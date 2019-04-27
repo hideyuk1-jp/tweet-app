@@ -13,5 +13,12 @@
           <small class="text-muted">登録日: <%= @user.created_at.in_time_zone('Asia/Tokyo').strftime("%Y-%m-%d") %></small>
       </div>
     </div>
+    <div class="card-footer">
+      <div class="d-flex align-items-center">
+        <div class="btn-group ml-auto" role="group">
+          <button type="button" class="btn btn-secondary d-flex align-items-center" onclick="location.href='/users/<%= @user.id %>/edit'"><i class="far fa-edit"></i></button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
