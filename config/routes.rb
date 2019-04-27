@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   post '/posts/:id/update' => 'posts#update'
   get '/posts/:id/destroy' => 'posts#destroy'
 
-  get '/users/new' => 'users#new'
+  get '/users/signup' => 'users#new'
   post '/users/create' => 'users#create'
-  post '/users/:id/edit' => 'users#edit'
   get '/users/index' => 'users#index'
+  get '/users/:id/edit' => 'users#edit'
+  post '/users/:id/update' => 'users#update'
+  get '/users/:id' => 'users#show'
 end

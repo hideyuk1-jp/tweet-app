@@ -60,13 +60,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 # Use Bootstrap4
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
-
 # Use Bootswatch
 gem "bootswatch", github: "thomaspark/bootswatch"
-
 # Use FontAwesome
 gem "font-awesome-sass", '~> 5.8.1'
+# Use rails-i18n
+gem 'rails-i18n'
