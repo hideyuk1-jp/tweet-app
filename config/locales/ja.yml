@@ -44,3 +44,9 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         image_name: "画像"
+    models:
+      post: "投稿"
+    attributes:
+      post:
+        content: "内容"
+        user_id: "ユーザーID"

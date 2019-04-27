@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @post = Post.new
     if params[:keyword]
       @posts = Post.where("content LIKE ?", "%#{params[:keyword]}%").order(created_at: :desc)
       @keyword = params[:keyword]
@@ -13,10 +14,17 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(content: params[:content])
-    @post.save
-    flash[:notice] = "投稿を送信しました。"
-    redirect_to("/posts/index")
+    @post = Post.new(
+      content: params[:content],
+      user_id: 1 # あとで修正
+    )
+    if @post.save
+      flash[:notice] = "投稿を送信しました。"
+      redirect_to("/posts/index")
+    else
+      @posts = Post.all.order(created_at: :desc)
+      render "posts/index"
+    end
   end
 
   def edit
