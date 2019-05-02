@@ -5,30 +5,32 @@
       <span><%= flash[:notice] %></span>
     </div>
   <% end %>
-  
-  <%= form_tag("/posts/create", class: "mt-4", method: :post) do %>
-    <% if @post.errors.size > 0 %>
-      <div class="alert alert-dismissible alert-warning">
-        <button type="button" class="close" data-dismiss="alert">×</button>
-        <ul class="m-0">
-        <% @post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
 
-    <fieldset>
-      <div class="form-group d-flex flex-row">
-        <%= image_tag("/user_images/default.jpg", class: "rounded-circle size-35 mr-4") %>
-        <div class="flex-fill">
-          <textarea class="form-control" rows="3" name="content" placeholder="いまどうしてる？"><%= @post.content %></textarea>
+  <% if @current_user %>
+    <%= form_tag("/posts/create", class: "mt-4", method: :post) do %>
+      <% if @post.errors.size > 0 %>
+        <div class="alert alert-dismissible alert-warning">
+          <button type="button" class="close" data-dismiss="alert">×</button>
+          <ul class="m-0">
+          <% @post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
         </div>
-        <div class="ml-4">
-          <button type="submit" class="btn btn-primary">投稿</button>
+      <% end %>
+
+      <fieldset>
+        <div class="form-group d-flex flex-row">
+          <%= image_tag("/user_images/#{@current_user.image_name}", class: "rounded-circle size-40 mr-4") %>
+          <div class="flex-fill">
+            <textarea class="form-control" rows="3" name="content" placeholder="いまどうしてる？"><%= @post.content %></textarea>
+          </div>
+          <div class="ml-4">
+            <button type="submit" class="btn btn-primary">投稿</button>
+          </div>
         </div>
-      </div>
-    </fieldset>
+      </fieldset>
+    <% end %>
   <% end %>
 
   <% @posts.each do |post| %>
