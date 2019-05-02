@@ -19,25 +19,31 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <%= link_to("投稿一覧", "/posts/index", class: "nav-link") %>
-              </li>
-              <li class="nav-item">
-                <%= link_to("ユーザー一覧", "/users/index", class: "nav-link") %>
-              </li>
-              <li class="nav-item">
-                <%= link_to("ユーザー登録", "/users/signup", class: "nav-link") %>
-              </li>
-              <li class="nav-item">
-                <%= link_to("ログイン", "/users/login", class: "nav-link") %>
-              </li>
-              <li class="nav-item">
-                <%= link_to("ログアウト", "/users/logout", class: "nav-link") %>
-              </li>
+              <% if session[:user_id] %>
+                <li class="nav-item">
+                  <%= link_to("投稿一覧", "/posts/index", class: "nav-link") %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to("ユーザー一覧", "/users/index", class: "nav-link") %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to("ログアウト", "/logout", class: "nav-link", method: "post") %>
+                </li>
+              <% else %>
+                <li class="nav-item">
+                  <%= link_to("ユーザー登録", "/signup", class: "nav-link") %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to("ログイン", "/login", class: "nav-link") %>
+                </li>
+              <% end %>
             </ul>
-            <%= form_tag('/posts/search', class: "form-inline my-2 my-lg-0", method: :post) do %>
-              <input class="form-control mr-sm-2" name="keyword" type="text" placeholder="キーワード" value="<%= @keyword %>">
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+            <% if session[:user_id] %>
+              <div class="mr-2"><%= @current_user.name %></div>
+              <%= form_tag('/posts/search', class: "form-inline my-2 my-lg-0", method: :post) do %>
+                <input class="form-control mr-sm-2" name="keyword" type="text" placeholder="キーワード" value="<%= @keyword %>">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
+              <% end %>
             <% end %>
           </div>
         </div>
