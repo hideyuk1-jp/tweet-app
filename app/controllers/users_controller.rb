@@ -57,7 +57,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all.order(created_at: :desc)
+    @users = User.all.order(created_at: :desc).page(params[:page]).per(USER_PER)
   end
 
   def login_form
