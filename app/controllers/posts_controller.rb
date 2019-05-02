@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
+    @likes_count = Like.where(post_id: @post.id).count
   end
 
   def create
