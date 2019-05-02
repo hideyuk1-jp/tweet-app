@@ -69,3 +69,5 @@ gem "bootswatch", github: "thomaspark/bootswatch"
 gem "font-awesome-sass", '~> 5.8.1'
 # Use rails-i18n
 gem 'rails-i18n'
+# Use kaminari
+gem 'kaminari', '~> 1.1.1'
