@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def likes
     @user = User.find_by(id: params[:id])
-    @likes = Like.where(user_id: @user.id).order(created_at: :desc)
+    @posts = @user.like_posts.page(params[:page]).per(POST_PER)
   end
 
   def edit
