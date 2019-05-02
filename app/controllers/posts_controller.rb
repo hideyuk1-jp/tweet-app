@@ -4,10 +4,10 @@ class PostsController < ApplicationController
   def index
     @post = Post.new
     if params[:keyword]
-      @posts = Post.where("content LIKE ?", "%#{params[:keyword]}%").order(created_at: :desc)
+      @posts = Post.where("content LIKE ?", "%#{params[:keyword]}%").order(created_at: :desc).page(params[:page]).per(POST_PER)
       @keyword = params[:keyword]
     else
-      @posts = Post.all.order(created_at: :desc)
+      @posts = Post.all.order(created_at: :desc).page(params[:page]).per(POST_PER)
     end
   end
 
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
       flash[:notice] = "投稿を送信しました。"
       redirect_to("/posts/index")
     else
-      @posts = Post.all.order(created_at: :desc)
+      @posts = Post.all.order(created_at: :desc).page(params[:page]).per(POST_PER)
       render "posts/index"
     end
   end
