@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/users/:id/edit' => 'users#edit'
   post '/users/:id/update' => 'users#update'
   get '/users/:id' => 'users#show'
+  get '/users/:id/likes' => 'users#likes'
 
   get '/login' => 'users#login_form'
   post '/login' => 'users#login'

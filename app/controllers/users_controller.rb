@@ -25,6 +25,12 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+    @posts = Post.where(user_id: @user.id).order(created_at: :desc)
+  end
+
+  def likes
+    @user = User.find_by(id: params[:id])
+    @likes = Like.where(user_id: @user.id).order(created_at: :desc)
   end
 
   def edit
@@ -51,7 +57,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.all.order(created_at: :desc)
   end
 
   def login_form
