@@ -25,7 +25,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 
-
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -59,6 +58,8 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
 # Use Bootstrap4
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'

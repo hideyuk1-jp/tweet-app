@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   # Postの1ページあたり表示件数
   POST_PER = 10
+  # Userの1ページあたり表示件数
+  USER_PER = 10
 
   def set_current_user
     @current_user = User.find_by(id: session[:user_id])
