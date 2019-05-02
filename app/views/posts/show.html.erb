@@ -17,10 +17,14 @@
     <div class="card-footer">
       <div class="d-flex align-items-center">
         <div class="btn-group" role="group">
-          <% if @post.id % 3 == 0 %>
-            <button type="button" class="btn btn-secondary liked"><i class="fas fa-heart mr-2"></i><span>15</span></button>
+          <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+            <%= link_to("/likes/#{@post.id}/destroy", class: "btn btn-secondary liked", method: "post") do %>
+              <i class="fas fa-heart mr-2"></i><span><%= @likes_count %></span>
+            <% end %>
           <% else %>
-            <button type="button" class="btn btn-secondary"><i class="far fa-heart mr-2"></i><span>14</span></button>
+            <%= link_to("/likes/#{@post.id}/create", class: "btn btn-secondary", method: "post") do %>
+              <i class="far fa-heart mr-2"></i><span><%= @likes_count %></span>
+            <% end %>
           <% end %>
         </div>
         <% if @current_user.id == @post.user_id %>
