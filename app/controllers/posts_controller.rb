@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(
       content: params[:content],
-      user_id: 1 # あとで修正
+      user_id: @current_user.id
     )
     if @post.save
       flash[:notice] = "投稿を送信しました。"
