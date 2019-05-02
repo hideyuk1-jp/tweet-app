@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   get '/login' => 'users#login_form'
   post '/login' => 'users#login'
   post '/logout' => 'users#logout'
+
+  post '/likes/:id/create' => 'likes#create'
+  post '/likes/:id/destroy' => 'likes#destroy'
 end
