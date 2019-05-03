@@ -1,6 +1,6 @@
 <div class="container">
   <% if @user.errors.size > 0 %>
-    <div class="alert alert-dismissible alert-warning">
+    <div class="alert alert-dismissible alert-warning mt-4">
       <button type="button" class="close" data-dismiss="alert">×</button>
       <ul class="m-0">
       <% @user.errors.full_messages.each do |message| %>
