@@ -3,6 +3,7 @@
     <div class="card">
       <div class="card-body">
         <h2>新規登録</h2>
+        <p class="text-muted">サンプルアプリケーションですので、メールアドレスは架空のものを使用してください。</p>
         <%= form_tag("/users/create",  class: "mt-4") do %>
           <fieldset>
             <% if @user.errors.size > 0 %>
