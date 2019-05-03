@@ -6,7 +6,7 @@ ruby '2.5.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -73,3 +73,12 @@ gem 'rails-i18n'
 gem 'kaminari', '~> 1.1.1'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+# development（開発環境）とtest（テスト）環境に適用
+group :development, :test do
+  gem 'sqlite3'
+end
+# 本番環境にのみ適用
+group :production do
+  gem 'pg'
+end
