@@ -1,4 +1,14 @@
 <div class="container">
+  <% if @user.errors.size > 0 %>
+    <div class="alert alert-dismissible alert-warning mt-4">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <ul class="m-0">
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <h2 class="mt-4">アカウント編集</h2>
   <%= form_tag("/users/#{@user.id}/update", method: :post, multipart: true, class: "mt-4") do %>
     <fieldset>
