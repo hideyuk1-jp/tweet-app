@@ -33,6 +33,13 @@
     <% end %>
   <% end %>
 
+  <% if !@current_user %>
+    <div class="alert alert-dismissible alert-info mt-4">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <span>投稿を行う場合は<%= link_to("新規登録", "/signup", class: "alert-link") %>するか<%= link_to("ログイン", "/login", class: "alert-link") %>してください、</span>
+    </div>
+  <% end %>
+
   <% @posts.each do |post| %>
     <%= link_to("/posts/#{post.id}", class: "card mt-4") do %>
       <div class="card-body d-flex flex-row">
