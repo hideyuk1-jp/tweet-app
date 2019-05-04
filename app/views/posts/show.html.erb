@@ -20,16 +20,16 @@
           <div class="btn-group" role="group">
             <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
               <%= link_to("/likes/#{@post.id}/destroy", class: "btn btn-secondary liked", method: "post") do %>
-                <i class="fas fa-heart mr-2"></i><span><%= @likes_count %></span>
+                <i class="fas fa-heart mr-2"></i><span class="liked-count"><%= @likes_count %></span>
               <% end %>
             <% else %>
               <%= link_to("/likes/#{@post.id}/create", class: "btn btn-secondary", method: "post") do %>
-                <i class="far fa-heart mr-2"></i><span><%= @likes_count %></span>
+                <i class="far fa-heart mr-2"></i><span class="liked-count"><%= @likes_count %></span>
               <% end %>
             <% end %>
           </div>
         <% else %>
-          <i class="far fa-heart mr-2"></i><span><%= @likes_count %></span>
+          <i class="far fa-heart mr-2"></i><span class="liked-count"><%= @likes_count %></span>
         <% end %>
         <% if @current_user %>
           <% if @current_user.id == @post.user_id %>
