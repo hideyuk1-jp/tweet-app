@@ -52,6 +52,11 @@
           <%= simple_format(post.content, class: "card-text") %>
         </div>
       </div>
+      <div class="card-footer">
+        <div class="d-flex align-items-center">
+            <i class="far fa-heart mr-2"></i><span class="liked-count"><%= post.liked_users.count %></span>
+        </div>
+      </div>
     <% end %>
   <% end %>
   <%= paginate @posts %>

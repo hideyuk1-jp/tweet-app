@@ -26,6 +26,9 @@ a.card, a.card:hover, a.post-user, a.post-user:hover {
   color: inherit;
   text-decoration: none;
 }
+.card-footer .liked-count {
+  line-height: 1;
+}
 .btn {
   text-transform: none;
 }
