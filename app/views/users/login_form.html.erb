@@ -10,6 +10,17 @@
     <div class="card">
       <div class="card-body">
         <h2>ログイン</h2>
+        <p class="text-muted">下記のログイン情報でテストユーザーとしてログインが出来ます。</p>
+        <table class="table text-muted w-75 mx-auto" style="border-right: 1px solid #dee2e6;border-bottom: 1px solid #dee2e6;border-left: 1px solid #dee2e6;">
+          <tr>
+            <th>メールアドレス</th>
+            <td>test@user</td>
+          </tr>
+          <tr>
+            <th>パスワード</th>
+            <td>testuser</td>
+          </tr>
+        </table>
         <%= form_tag("/login",  class: "mt-4") do %>
           <fieldset>
             <% if @error_message %>
