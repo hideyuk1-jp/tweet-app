@@ -10,6 +10,10 @@
     <div class="card">
       <div class="card-body">
         <h2>ログイン</h2>
+        <p class="text-muted">下のボタンからテストユーザーとしてログインすることが出来ます。</p>
+        <p class="text-center"><%= link_to("テストユーザーとしてログイン", login_path(email: "test@user", password: "testuser"), method: "post", class: "btn btn-success") %></p>
+        <hr >
+        <p class="text-muted">通常の手順でログインする場合は以下のログインフォームからログインしてください。</p>
         <%= form_tag("/login",  class: "mt-4") do %>
           <fieldset>
             <% if @error_message %>
