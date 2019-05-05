@@ -31,4 +31,5 @@
 /config/master.key
 
 # Ignore uploaded files by user
-/public/user_images
+/public/user_images/*
+!/public/user_images/default.jpg
