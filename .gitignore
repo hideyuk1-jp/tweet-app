@@ -33,3 +33,7 @@
 # Ignore uploaded files by user
 /public/user_images/*
 !/public/user_images/default.jpg
+
+# Ignore test
+/public/user_images2/*
+!/public/user_images2/default.jpg
