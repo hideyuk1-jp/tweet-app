@@ -42,9 +42,9 @@
           <% if @current_user.id == @post.user_id %>
             <div class="btn-group ml-auto" role="group">
               <button type="button" class="btn btn-secondary d-flex align-items-center" onclick="location.href='/posts/<%= @post.id %>/edit'"><i class="far fa-edit"></i></button>
-              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-destroy"><i class="far fa-trash-alt"></i></button>
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-post-destroy"><i class="far fa-trash-alt"></i></button>
             </div>
-            <div class="modal fade" id="modal-destroy" tabindex="-1" role="dialog" aria-labelledby="label1" aria-hidden="true">
+            <div class="modal fade" id="modal-post-destroy" tabindex="-1" role="dialog" aria-labelledby="label1" aria-hidden="true">
               <div class="modal-dialog modal-warning" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -117,9 +117,9 @@
           <% if @current_user.id == comment.user_id %>
             <div class="d-flex align-items-end ml-auto">
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-destroy"><i class="far fa-trash-alt"></i></button>
+                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-comment-destroy"><i class="far fa-trash-alt"></i></button>
               </div>
-              <div class="modal fade" id="modal-destroy" tabindex="-1" role="dialog" aria-labelledby="label1" aria-hidden="true">
+              <div class="modal fade" id="modal-comment-destroy" tabindex="-1" role="dialog" aria-labelledby="label1" aria-hidden="true">
                 <div class="modal-dialog modal-warning" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
