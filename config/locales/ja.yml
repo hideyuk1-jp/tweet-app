@@ -50,3 +50,10 @@ ja:
       post:
         content: "内容"
         user_id: "ユーザーID"
+    models:
+      comment: "コメント"
+    attributes:
+      comment:
+        content: "内容"
+        user_id: "ユーザーID"
+        post_id: "投稿ID"

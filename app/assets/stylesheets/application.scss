@@ -22,11 +22,11 @@
 body {
   font-family: 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
-a.card, a.card:hover, a.post-user, a.post-user:hover {
+a.card, a.card:hover, a.post-user, a.post-user:hover , a.comment-user, a.comment-user:hover {
   color: inherit;
   text-decoration: none;
 }
-.card-footer .liked-count {
+.card-footer .liked-count, .card-footer .commented-count {
   line-height: 1;
 }
 .btn {
