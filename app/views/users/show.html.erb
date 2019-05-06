@@ -46,7 +46,12 @@
 
       <div class="card-footer">
         <div class="d-flex align-items-center">
+          <div class="mr-4">
+            <i class="far fa-comment-alt mr-2"></i><span class="commented-count"><%= post.comments.count %></span>
+          </div>
+          <div>
             <i class="far fa-heart mr-2"></i><span class="liked-count"><%= post.liked_users.count %></span>
+          </div>
         </div>
       </div>
     <% end %>

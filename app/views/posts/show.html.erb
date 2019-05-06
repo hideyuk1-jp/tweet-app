@@ -101,20 +101,22 @@
   <% @comments.each do |comment| %>
     <div class="card mt-4">
       <div class="card-body d-flex flex-row">
-        <%= image_tag("/user_images/#{comment.user.image_name}", class: "rounded-circle size-40 mr-4") %>
-        <div class="d-flex flex-column">
+        <%= link_to("/users/#{comment.user_id}", class: "comment-user") do %>
+          <%= image_tag("/user_images/#{comment.user.image_name}", class: "rounded-circle size-40 mr-4") %>
+        <% end %>
+        <div class="d-flex flex-column mr-4">
           <div class="d-flex flex-row align-items-end mb-2">
-            <h5 class="mr-4 mb-0"><%= comment.user.name %></h5>
-            <small class="text-muted"><%= time_ago_in_words(comment.created_at) %>前</small>
+            <%= link_to("/users/#{comment.user_id}", class: "comment-user") do %>
+              <h5 class="mr-4 mb-0"><%= comment.user.name %></h5>
+            <% end %>
+            <small class="text-muted"><%= comment.created_at.in_time_zone('Asia/Tokyo').strftime("%Y-%m-%d %H:%M") %></small>
           </div>
           <%= simple_format(comment.content, class: "card-text") %>
         </div>
-      </div>
-      <% if @current_user %>
-        <% if @current_user.id == comment.user_id %>
-          <div class="card-footer">
-            <div class="d-flex align-items-center">
-              <div class="btn-group ml-auto" role="group">
+        <% if @current_user %>
+          <% if @current_user.id == comment.user_id %>
+            <div class="d-flex align-items-end ml-auto">
+              <div class="btn-group" role="group">
                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#modal-destroy"><i class="far fa-trash-alt"></i></button>
               </div>
               <div class="modal fade" id="modal-destroy" tabindex="-1" role="dialog" aria-labelledby="label1" aria-hidden="true">
@@ -139,9 +141,9 @@
                 </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   <% end %>
   <%= paginate @comments %>
