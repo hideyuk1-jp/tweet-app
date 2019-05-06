@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/posts/:id' => 'posts#show'
   get '/posts/:id/edit' => 'posts#edit'
   post '/posts/:id/update' => 'posts#update'
-  get '/posts/:id/destroy' => 'posts#destroy'
+  post '/posts/:id/destroy' => 'posts#destroy'
 
   get '/signup' => 'users#new'
   post '/users/create' => 'users#create'
@@ -23,4 +23,7 @@ Rails.application.routes.draw do
 
   post '/likes/:post_id/create' => 'likes#create'
   post '/likes/:post_id/destroy' => 'likes#destroy'
+
+  post '/comments/:post_id/create' => 'comments#create'
+  post '/comments/:id/destroy' => 'comments#destroy'
 end
