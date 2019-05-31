@@ -26,4 +26,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def get_userimage_src(user)
+    userimage_src = Userimage.find_by(user_id: user.id)
+    if userimage_src
+      return "data:image/jpg;base64, #{user.userimage.picture}"
+    else
+      return "/user_images/default.jpg"
+    end
+  end
+
+  helper_method :get_userimage_src
 end
