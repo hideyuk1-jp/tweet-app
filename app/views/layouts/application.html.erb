@@ -38,7 +38,7 @@
               <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle p-lg-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <%= image_tag("/user_images/#{@current_user.image_name}", height: '32', width: '32', alt: "サンプル画像", class: "rounded-circle") %>
+                    <%= image_tag(get_userimage_src(@current_user), height: '32', width: '32', alt: "サンプル画像", class: "rounded-circle") %>
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <%= link_to("マイページ", "/users/#{@current_user.id}", class: "dropdown-item") %>

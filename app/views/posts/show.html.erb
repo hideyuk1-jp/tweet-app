@@ -8,7 +8,7 @@
   <div class="card mt-4">
     <div class="card-body d-flex flex-column">
       <%= link_to("/users/#{@post.user_id}", class: "post-user d-flex flex-row align-items-center mb-3") do %>
-        <%= image_tag("/user_images/#{@post.user.image_name}", class: "rounded-circle size-50 mr-4") %>
+        <%= image_tag(get_userimage_src(@post.user), class: "rounded-circle size-50 mr-4") %>
         <h5 class="mr-4 mb-0"><%= @post.user.name %></h5>
       <% end %>
       <%= simple_format(@post.content, class: "card-text lead") %>
@@ -86,7 +86,7 @@
 
       <fieldset>
         <div class="form-group d-flex flex-row">
-          <%= image_tag("/user_images/#{@current_user.image_name}", class: "rounded-circle size-40 mr-4") %>
+          <%= image_tag(get_userimage_src(@current_user), class: "rounded-circle size-40 mr-4") %>
           <div class="flex-fill">
             <textarea id="comment-form-textarea" class="form-control" rows="3" name="content" placeholder="コメントしよう"><%= @comment.content %></textarea>
           </div>
@@ -102,7 +102,7 @@
     <div class="card mt-4">
       <div class="card-body d-flex flex-row">
         <%= link_to("/users/#{comment.user_id}", class: "comment-user") do %>
-          <%= image_tag("/user_images/#{comment.user.image_name}", class: "rounded-circle size-40 mr-4") %>
+          <%= image_tag(get_userimage_src(comment.user), class: "rounded-circle size-40 mr-4") %>
         <% end %>
         <div class="d-flex flex-column mr-4">
           <div class="d-flex flex-column flex-md-row align-items-md-end mb-2">

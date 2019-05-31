@@ -1,3 +1,5 @@
+require 'base64'
+
 class UsersController < ApplicationController
   before_action :authenticate_user, {only: [:edit, :update]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
@@ -11,7 +13,6 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:name],
       email: params[:email],
-      image_name: "default.jpg",
       password: params[:password]
     )
     if @user.save
@@ -42,9 +43,12 @@ class UsersController < ApplicationController
     @user.name = params[:name]
 
     if params[:image]
-      @user.image_name = "#{@user.id}.jpg"
       image = params[:image]
-      File.binwrite("public/user_images/#{@user.image_name}", image.read)
+      if @user.userimage
+        @user.userimage.picture = Base64.encode64(image.read)
+      else
+        @user.userimage = Userimage.new(user_id: @user.id, picture: Base64.encode64(image.read))
+      end
     end
 
     if @user.save
