@@ -70,7 +70,7 @@ gem "font-awesome-sass", '~> 5.8.1'
 # Use rails-i18n
 gem 'rails-i18n'
 # Use kaminari
-gem 'kaminari', '~> 1.1.1'
+gem 'kaminari', '~> 1.2.1'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
